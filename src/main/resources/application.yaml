@@ -1,0 +1,11 @@
+spring:
+   application:
+     name: sbcache
+   cache:
+     jcache:
+       config : classpath:ehcache.xml
+server:
+  port: 8080
+rocksdb:
+  base:
+    path: /Users/kumarghs/Documents/DEVELOPMENT/sbcachedemo/rocksdb
