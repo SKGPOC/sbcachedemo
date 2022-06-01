@@ -1,8 +1,6 @@
 package com.oup.cachedemo.sbcachedemo.service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import com.oup.cachedemo.sbcachedemo.bo.EmployeeBO;
 import com.oup.cachedemo.sbcachedemo.dao.RocksDBRepository;
@@ -34,6 +32,7 @@ public class SampleService {
         @CacheEvict("cache_EMPLOYEES"),
         @CacheEvict(value = "cache_EMPLOYEE_BY_ID", key = "#employee.userId")
     })
+    //@CachePut(cacheNames = "studentCache", key = "#result.id")
     public void update(EmployeeBO employee) {
         log.info("Adding employee");
         repo.save(employee.getUserId(), employee);
